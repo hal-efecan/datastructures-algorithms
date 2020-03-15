@@ -13,8 +13,6 @@ function convertToF(celsius) {
   
   console.log(convertToF(30));
 
-
-
 // Basic Algorithm Scripting: Reverse a String
 // Reverse the provided string.
 
@@ -29,8 +27,6 @@ function reverseString(str) {
   }
   
 console.log(reverseString("hello"));
-
-
 
 // Basic Algorithm Scripting: Factorialize a Number
 // Return the factorial of the provided integer.
@@ -87,4 +83,3 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog") // should 
 // findLongestWordLength("Google do a barrel roll") // should return 6.
 // findLongestWordLength("What is the average airspeed velocity of an unladen swallow") // should return 8.
 // findLongestWordLength("What if we try a super-long word such as otorhinolaryngology") // should return 19.
-*/
