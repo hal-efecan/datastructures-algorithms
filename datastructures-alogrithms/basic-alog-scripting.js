@@ -1,4 +1,4 @@
-/*
+
 // Basic Algorithm Scripting: Convert Celsius to FahrenheitPassed
 // The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.
 
@@ -12,9 +12,9 @@ function convertToF(celsius) {
   }
   
   console.log(convertToF(30));
-*/
 
-/*
+
+
 // Basic Algorithm Scripting: Reverse a String
 // Reverse the provided string.
 
@@ -29,9 +29,9 @@ function reverseString(str) {
   }
   
 console.log(reverseString("hello"));
-*/
 
-/*
+
+
 // Basic Algorithm Scripting: Factorialize a Number
 // Return the factorial of the provided integer.
 
@@ -52,9 +52,7 @@ function factorialize(num) {
   }
 
 console.log(factorialize(5));
-*/
 
-/*
 // Basic Algorithm Scripting: Find the Longest Word in a String
 // Return the length of the longest word in the provided sentence.
 
