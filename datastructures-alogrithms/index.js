@@ -10,7 +10,6 @@ function sumAll(arr) {
 
     if(a > b) { 
         while(b < a) {
-            console.log(b)
             newArr.push(b)
             b++
         }
@@ -76,7 +75,7 @@ function destroyer(...args) {
     let argsArr = arr
 
     let newArr = []
-    
+
     firstPart.filter(item => {
         let notHere = argsArr.indexOf(item) === -1
         if(notHere === true) {
