@@ -6,7 +6,6 @@
 
 function sumAll(arr) {
     let [ a, b ] = arr
-    let res;
     let newArr = []
 
     if(a > b) { 
@@ -24,7 +23,6 @@ function sumAll(arr) {
         newArr.push(a)
     }
 
-    newArr
     let sum = newArr.reduce((cv, acc) => {
         return cv + acc
     })
@@ -72,18 +70,13 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 // You have to use the arguments object.
 
 function destroyer(...args) {
-    console.log(args)
     
-    let arr = [...args]
-    console.log(arr)
-    
+    let arr = [...args]    
     let firstPart = arr.splice(0,1).flat() 
-    console.log(firstPart)
-
     let argsArr = arr
-    console.log(argsArr)
 
     let newArr = []
+    
     firstPart.filter(item => {
         let notHere = argsArr.indexOf(item) === -1
         if(notHere === true) {
