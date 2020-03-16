@@ -221,5 +221,23 @@ function findElement(arr, func) {
   }
   
   // console.log(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }))
-  console.log(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }))
+  // console.log(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }))
   // console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+
+// Basic Algorithm Scripting: Boo who
+// Check if a value is classified as a boolean primitive. Return true or false.
+
+// Boolean primitives are true and false.
+
+function booWho(bool) {
+    if(typeof bool === "boolean") {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(booWho(true))
+console.log(booWho(false))
+console.log(booWho([1, 2, 3]))
+console.log(booWho([].slice))
