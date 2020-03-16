@@ -25,7 +25,7 @@ function reverseString(str) {
     let newArr = arr.reverse().join('')
     return newArr;
   }
-  
+
 console.log(reverseString("hello"));
 
 // Basic Algorithm Scripting: Factorialize a Number
@@ -77,9 +77,127 @@ function findLongestWordLength(str) {
     return longestWord;
 }
 
-findLongestWordLength("The quick brown fox jumped over the lazy dog") // should return a number.
+// findLongestWordLength("The quick brown fox jumped over the lazy dog") // should return a number.
 // findLongestWordLength("The quick brown fox jumped over the lazy dog") // should return 6.
 // findLongestWordLength("May the force be with you") // should return 5.
 // findLongestWordLength("Google do a barrel roll") // should return 6.
 // findLongestWordLength("What is the average airspeed velocity of an unladen swallow") // should return 8.
 // findLongestWordLength("What if we try a super-long word such as otorhinolaryngology") // should return 19.
+
+// Basic Algorithm Scripting: Return Largest Numbers in Arrays
+// Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+
+// Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
+
+function largestOfFour(arr) {
+
+    let largestArr = []
+        arr.forEach(item => {
+            item.sort((a,b) => a - b)
+            let largestNum = item.pop()
+            largestArr.push(largestNum)
+        })
+
+    return largestArr;
+  }
+
+console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])) // should return an array.
+
+// Basic Algorithm Scripting: Confirm the Ending
+// Check if a string (first argument, str) ends with the given target string (second argument, target).
+
+// This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you 
+// to use one of the JavaScript substring methods instead.
+
+function confirmEnding(str, target) {
+
+    let lowerCase = str.split('').map(ele => {
+        return ele.toLowerCase()
+    })
+
+    let rev = lowerCase.reverse()
+    let trg = target.split('')
+
+    let sep = rev.splice(0, trg.length)
+    let back = sep.reverse()
+    
+    let t = trg.join('')
+    let b = back.join('')
+
+    if(t === b) { 
+        return true 
+    } else { 
+        return false 
+    }
+}
+
+// console.log(confirmEnding("Bastian", "n"));
+// console.log(confirmEnding("Abstraction", "action")) // should return true.
+// console.log(confirmEnding("Congratulation", "on"))
+// console.log(confirmEnding("Connor", "n"))
+// console.log(confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification"))
+// console.log(confirmEnding("He has to give me a new name", "name"))
+
+// Basic Algorithm Scripting: Repeat a String Repeat a String
+// Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number.
+
+function repeatStringNumTimes(str, num) {
+
+    let arr = []
+    for(let i=0; i<num; i++) {
+        arr.push(str)
+    }
+
+    let result = arr.join('')
+    
+    return result
+  }
+  
+console.log(repeatStringNumTimes("abc", 3));
+
+// Basic Algorithm Scripting: Truncate a String
+// Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+
+function truncateString(str, num) {
+    
+    const strArr = str.split('')
+    
+    let newArr = strArr.filter(ele => {
+        if(ele !== '') {
+            return ele 
+        } 
+    })
+
+    let oth = []
+    
+    if( num < newArr.length ){
+
+        newArr.forEach((ele, idx )=> {
+            console.log(ele, idx)
+            if(idx < num) {
+                oth.push(ele)
+            }  
+        })
+
+        oth.push('...')
+        let final = oth.join('')
+        return final
+
+    } else {
+
+        newArr.forEach((ele, idx )=> {
+            console.log(ele, idx)
+            if(idx < num) {
+                oth.push(ele)
+            }  
+        })
+
+        let final = oth.join('')
+        oth.push('...')
+        return final
+    }
+  }
+  
+  // console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+  // console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11))
+  // console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length))
