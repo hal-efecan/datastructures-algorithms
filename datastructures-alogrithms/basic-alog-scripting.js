@@ -241,3 +241,32 @@ console.log(booWho(true))
 console.log(booWho(false))
 console.log(booWho([1, 2, 3]))
 console.log(booWho([].slice))
+
+// Basic Algorithm Scripting: Title Case a Sentence
+// Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+// For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+
+function titleCase(str) {
+
+    const arr = str.split(' ')
+    console.log(arr)
+
+    let newArr = []
+
+    arr.map(ele => {
+        let slash = ele.replace('/')
+        let oth = slash.replace(ele[0], ele[0].toUpperCase())
+        console.log(oth)
+        newArr.push(oth)
+    })
+    console.log(newArr.join(' '))
+    let final = newArr.join(' ')
+
+    return final;
+}
+
+// console.log(titleCase("I'm a little tea pot")) 
+// console.log(titleCase("I'm a little tea pot")) 
+ console.log(titleCase("sHoRt AnD sToUt"))
+// console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"))
