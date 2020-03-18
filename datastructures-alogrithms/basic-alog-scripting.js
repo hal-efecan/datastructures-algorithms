@@ -247,26 +247,23 @@ console.log(booWho([].slice))
 
 // For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
 
+// /^\S|\b[a-zA-Z](?<!')\B/gm
+
 function titleCase(str) {
+    
+    let firstLetters = /^\S|\b[a-zA-Z](?<!')\B|a/gm
+    let otherLetters = /^|(?<!\s)\w/gm
 
-    const arr = str.split(' ')
-    console.log(arr)
-
-    let newArr = []
-
-    arr.map(ele => {
-        let slash = ele.replace('/')
-        let oth = slash.replace(ele[0], ele[0].toUpperCase())
-        console.log(oth)
-        newArr.push(oth)
+    s1 = str.replace(firstLetters, (match) => {
+        return match.toUpperCase()
+    }). replace(otherLetters, (match) => {
+        return match.toLowerCase()
     })
-    console.log(newArr.join(' '))
-    let final = newArr.join(' ')
 
-    return final;
+    return s1
 }
 
 // console.log(titleCase("I'm a little tea pot")) 
 // console.log(titleCase("I'm a little tea pot")) 
- console.log(titleCase("sHoRt AnD sToUt"))
+// console.log(titleCase("sHoRt AnD sToUt"))
 // console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"))
