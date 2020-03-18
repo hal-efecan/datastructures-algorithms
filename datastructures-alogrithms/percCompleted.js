@@ -7,7 +7,7 @@
 completion = [
     {name: 'Basic JS',          a: 110, q: 110},
     {name: 'ES6',               a: 31,  q: 31},
-    {name: 'REGEX',             a: 22,  q: 33},
+    {name: 'REGEX',             a: 28,  q: 33},
     {name: 'Debugging',         a: 12,  q: 12},
     {name: 'Data Struc',        a: 20,  q: 20},
     {name: 'Bsc Algo Scripts',  a: 10,  q: 16},
