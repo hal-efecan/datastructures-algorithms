@@ -10,7 +10,7 @@ completion = [
     {name: 'REGEX',             a: 33,  q: 33},
     {name: 'Debugging',         a: 12,  q: 12},
     {name: 'Data Struc',        a: 20,  q: 20},
-    {name: 'Bsc Algo Scripts',  a: 10,  q: 16},
+    {name: 'Bsc Algo Scripts',  a: 16,  q: 16},
     {name: 'OOP',               a: 18,  q: 26},
     {name: 'FP',                a: 8,   q: 24},
     {name: 'Int Algo Scripts',  a: 3,   q: 21},

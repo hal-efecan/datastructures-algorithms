@@ -197,7 +197,7 @@ function truncateString(str, num) {
         return final
     }
   }
-  
+
   // console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
   // console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11))
   // console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length))
@@ -219,7 +219,7 @@ function findElement(arr, func) {
     let passed = newArr[0]
     return passed;
   }
-  
+
   // console.log(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }))
   // console.log(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }))
   // console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
@@ -267,3 +267,144 @@ function titleCase(str) {
 // console.log(titleCase("I'm a little tea pot")) 
 // console.log(titleCase("sHoRt AnD sToUt"))
 // console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"))
+
+// Basic Algorithm Scripting: Slice and Splice
+// You are given two arrays and an index.
+
+// Use the array methods slice and splice to copy each element of the first array into the second array, in order.
+// Begin inserting elements at index n of the second array.
+// Return the resulting array. The input arrays should remain the same after the function runs.
+
+function frankenSplice(arr1, arr2, n) {
+    let newArr = arr1.slice(0, arr1.length)
+    let copy2 = [...arr2]
+    copy2.splice(n, 0, newArr)
+    let final = copy2.flat()
+    return final;
+  }
+
+// frankenSplice([1, 2, 3], [4, 5, 6], 1);
+// frankenSplice([1, 2, 3], [4, 5], 1)
+// frankenSplice([1, 2], ["a", "b"], 1)
+
+// Basic Algorithm Scripting: Falsy Bouncer
+// Remove all falsy values from an array.
+
+// Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+// Hint: Try converting each value to a Boolean.
+
+function bouncer(arr) {
+
+    let truth = []
+    arr.forEach(ele => {
+        if(ele) {
+            truth.push(ele)
+        }
+    })
+
+    return truth;
+}
+  
+bouncer([7, "ate", "", false, 9]);
+
+
+// Basic Algorithm Scripting: Where do I Belong
+// Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. 
+// The returned value should be a number. For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), 
+// but less than 2 (index 1).
+
+// Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] 
+// and 19 is less than 20 (index 2) and greater than 5 (index 1).
+
+function getIndexToIns(arr, num) {
+
+    let newArr = [...arr, num]
+    let sorted = newArr.sort((a,b) => {
+        return a - b
+    })
+    const idx = sorted.indexOf(num)
+    return idx;
+}
+
+// getIndexToIns([40, 60], 50); // should return 1
+// getIndexToIns([10, 20, 30, 40, 50], 35) // should return 3
+getIndexToIns([3, 10, 5], 3)
+
+
+// Basic Algorithm Scripting: Mutations
+// Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+
+// For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+
+// The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
+
+// Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
+
+function mutation(arr) {
+    let first = arr[0].toLowerCase()
+    let f = first.split('')
+
+    let second = arr[1].toLowerCase()
+    let s = second.split('')
+
+    let falseArr = []
+
+    s.forEach(letter => {
+        if(f.includes(letter)) {
+            letter
+        } else {
+            falseArr.push(letter)
+        }
+    })
+
+    if(falseArr.length > 0) {
+        return false 
+    } else {
+        return true
+    }
+}
+
+// console.log(mutation(["hello", "hey"]))
+// console.log(mutation(["Mary", "Aarmy"]));
+// console.log(mutation(["hello", "Hello"]))
+// mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])
+
+// Basic Algorithm Scripting: Chunky Monkey
+// Write a function that splits an array (first argument) into groups the length of size (second argument) and returns 
+// them as a two-dimensional array.
+
+function chunkArrayInGroups(arr, size) { 
+
+    if(arr.length % size === 0) {
+        let final = []
+        let i = 0;
+        let numArr = arr.length/size
+
+        while(i < numArr) {
+            final.push(arr.splice(0, size))
+            i++
+        }
+        return final
+
+    } else {
+
+        let i = 0
+        let newArr = []
+        while(i <= arr.length) {
+            newArr.push(arr.splice(0, size))
+            i++
+        }
+        if(arr.length === 0) {
+            return newArr         
+        } else {
+            return newArr.concat([arr])
+        }
+    }
+}
+
+// chunkArrayInGroups(["a", "b", "c", "d"], 2);
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3) // should return [[0, 1, 2], [3, 4, 5], [6]]
+// console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)) // [[0, 1], [2, 3], [4, 5]]
+// console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4))
+// console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3))
+// console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2))
