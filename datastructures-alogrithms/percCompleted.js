@@ -12,7 +12,7 @@ completion = [
     {name: 'Data Struc',        a: 20,  q: 20},
     {name: 'Bsc Algo Scripts',  a: 16,  q: 16},
     {name: 'OOP',               a: 18,  q: 26},
-    {name: 'FP',                a: 15,   q: 24},
+    {name: 'FP',                a: 22,   q: 24},
     {name: 'Int Algo Scripts',  a: 3,   q: 21},
 ]
 
